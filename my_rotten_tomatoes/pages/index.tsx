@@ -1,12 +1,28 @@
-export default function Home() {
+import type { NextPage } from 'next'
+import Head from 'next/head'
+import Image from 'next/image'
+import Header from '../components/Header'
+
+const Home: NextPage= () => {
 	return (
-		<div className="flex flex-col items-center relative min-h-screen">
-			<h2 className="font-raleway font-bold text-6xl text-primary pt-20 pb-6 md:text-3xl">
-				Movie <span className="text-red">Details</span> App
-			</h2>
-			<h3 className="text-black text-2xl font-raleway font-bold uppercase tracking-wide mb-12 md:text-base md:px-4 md:text-center">
-				Get info about any movie
-			</h3>
+		<div className=''>
+			<Head>
+				<title> Home - My rotten tomatoes</title>
+				<link rel='icon' href='/favicon.ico' />
+			</Head>
+			<Header/>
+
+			<main>
+				<section>
+
+				</section>
+
+
+
+			</main>
+
 		</div>
-	);
+	)
 }
+
+export default Home

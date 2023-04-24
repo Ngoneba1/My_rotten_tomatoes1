@@ -4,9 +4,10 @@ import Header from '../components/Header'
 import Banner from'../components/Banner'
 import requests from '@/utils/request'
 import { Movie } from '@/typings'
+import Row from '../components/Row'
 
 interface Props {
-	netflixOriginals: Movie[]
+	netflixOriginal: Movie[]
 	trendingNow: Movie[]
 	topRated: Movie[]
 	actionMovies: Movie[]
@@ -16,15 +17,15 @@ interface Props {
 	documentaries: Movie[]
 }
 
-const Home = ({ netflixOriginals,
+const Home = ({ topRated,
+	netflixOriginal,
 	actionMovies,
 	comedyMovies,
 	documentaries,
 	horrorMovies,
 	romanceMovies,
-	topRated,
 	trendingNow, }: Props) => {
-	console.log(netflixOriginals)
+	console.log(topRated)
 	return (
 		<div className=''>
 			<Head>
@@ -33,12 +34,19 @@ const Home = ({ netflixOriginals,
 			</Head>
 			<Header/>
 
-			<main>
+			<main className='relative pl-4 pb-24 lg:space-y-24'> 
 				
-			<Banner netflixOriginals={netflixOriginals}/>
-				<section>
-
-				</section>
+			<Banner topRated={topRated}/>
+			<section className="md:space-y-24">
+          <Row title="Trending Now" movies={trendingNow} />
+          <Row title="Top Rated" movies={topRated} />
+          <Row title="Action Thrillers" movies={actionMovies} />
+   
+          <Row title="Comedies" movies={comedyMovies} />
+          <Row title="Scary Movies" movies={horrorMovies} />
+          <Row title="Romance Movies" movies={romanceMovies} />
+          <Row title="Documentaries" movies={documentaries} />
+        </section>
 
 
 

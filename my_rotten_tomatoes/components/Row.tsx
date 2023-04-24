@@ -25,6 +25,8 @@ function Row({title, movies}:Props) {
         }
 
     }
+
+
     
 
     return( 

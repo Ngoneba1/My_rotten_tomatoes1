@@ -25,8 +25,8 @@ function Banner({topRated}:Props) {
 
     return (
       
-     <div className="flex flex-col space-y-2 py-16 md:space-y-4 lg:h-[65vh] lg:justify-end lg:pb-12">
-  <div className="absolute top-0 left-0 -z-10 h-[100vh] w-screen">
+     <div className="flex flex-col space-y-16 py-16 md:space-y-4 lg:h-[65vh] lg:justify-end lg:pb-12">
+  <div className="absolute top-0 left-0 -z-10 h-[95vh] w-screen">
     <Image
       src={`${baseUrl}${movie?.backdrop_path || movie?.poster_path || ''}`}
       layout="fill"
@@ -34,7 +34,7 @@ function Banner({topRated}:Props) {
       alt={''}
     />
   </div>    
-  <h1 className="text-2xl font-bold text-white lg:justify-end mt-4 md:mt-6 lg:mt-8">
+  <h1 className="text-6xl font-bold text-white lg:justify-end mt-4 md:mt-6 lg:mt-8">
   {movie?.title || movie?.name || movie?.original_name}
 </h1>
 

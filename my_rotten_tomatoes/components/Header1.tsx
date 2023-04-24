@@ -1,6 +1,10 @@
+import useAuth from '@/hooks/useAuth'
+import { useRouter } from 'next/router';
 import {SearchIcon, UserIcon} from '@heroicons/react/solid'
 
+
 function Header() {
+    const router = useRouter();
     return <header className="bg-[#FA3209]">
         
             <div className="flex items-center space-x-2 md:space-x-10">
@@ -16,14 +20,20 @@ function Header() {
                 <li className="headerLink">TV Shows</li>
                 <li className="headerLink">Movies</li>
                 <li className="headerLink">New & Popular</li>
+                <li className="headerLink">My List</li>
             </ul>
+
+
+
 
             </div>
                
 
             <div className='flex items-center space-x-4 font-light'>
              <SearchIcon className='h-6 w-6 fill-primary'/>
-             <UserIcon className='h-6 w-6 fill-primary'/>
+             <UserIcon className='h-6 w-6 fill-primary'
+             onClick={() => router.push('/login')}
+             />
                 
             </div>
             

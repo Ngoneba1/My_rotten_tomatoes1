@@ -1,6 +1,8 @@
+import useAuth from '@/hooks/useAuth'
 import {SearchIcon, UserIcon} from '@heroicons/react/solid'
 
 function Header() {
+    const {logout} = useAuth()
     return <header className="bg-[#FA3209]">
         
             <div className="flex items-center space-x-2 md:space-x-10">
@@ -27,7 +29,9 @@ function Header() {
 
             <div className='flex items-center space-x-4 font-light'>
              <SearchIcon className='h-6 w-6 fill-primary'/>
-             <UserIcon className='h-6 w-6 fill-primary'/>
+             <UserIcon className='h-6 w-6 fill-primary'
+             onClick={logout}
+             />
                 
             </div>
             

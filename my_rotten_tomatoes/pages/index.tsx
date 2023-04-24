@@ -24,7 +24,8 @@ const Home = ({ topRated,
 	documentaries,
 	horrorMovies,
 	romanceMovies,
-	trendingNow, }: Props) => {
+	trendingNow, 
+}: Props) => {
 	console.log(topRated)
 	return (
 		<div className=''>
@@ -41,7 +42,7 @@ const Home = ({ topRated,
           <Row title="Trending Now" movies={trendingNow} />
           <Row title="Top Rated" movies={topRated} />
           <Row title="Action Thrillers" movies={actionMovies} />
-   
+		
           <Row title="Comedies" movies={comedyMovies} />
           <Row title="Scary Movies" movies={horrorMovies} />
           <Row title="Romance Movies" movies={romanceMovies} />

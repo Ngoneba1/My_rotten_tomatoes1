@@ -5,6 +5,9 @@ import Banner from'../components/Banner'
 import requests from '@/utils/request'
 import { Movie } from '@/typings'
 import Row from '../components/Row'
+import useAuth from '@/hooks/useAuth'
+import Header1 from './Header1'
+
 
 interface Props {
 	netflixOriginal: Movie[]
@@ -32,7 +35,7 @@ const Home = ({ topRated,
 				<title> Home - My rotten tomatoes</title>
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
-			<Header/>
+			<Header1/>
 
 			<main className='relative pl-4 pb-24 lg:space-y-24'> 
 				

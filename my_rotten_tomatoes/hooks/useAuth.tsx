@@ -49,11 +49,12 @@ export const  AuthProvider= ({children}:AuthProviderProps) => {
               // Logged in...
               setUser(user)
               setLoading(false)
+              router.push('/authenticatedUser')
             } else {
               // Not logged in...
               setUser(null)
               setLoading(true)
-              router.push('/login')
+              router.push('/unauthenticatedUser')
             }
             setInitialLoading(false)
         }),

@@ -1,5 +1,5 @@
 module.exports = {
   images: {
-  domains:['image.tmdb.org','external-preview.redd.it'],
+  domains:['image.tmdb.org','rb.gy'],
   },
   }

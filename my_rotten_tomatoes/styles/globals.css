@@ -22,6 +22,10 @@ header {
   .input {
     @apply w-full rounded bg-[#333] px-5 py-3.5 placeholder-[gray] outline-none focus:bg-[#454545];
   }
+
+  .modalButton {
+    @apply flex h-11 w-11 items-center justify-center rounded-full border-2 border-[#2a2a2a] bg-[#2a2a2a] transition hover:border-[white] hover:bg-[white]/10;
+  }
 }
 
 

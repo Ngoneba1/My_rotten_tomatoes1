@@ -1,10 +1,14 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import CustomModal from '@/components/Modal';
 import Header from '../components/Header'
 import Banner from'../components/Banner'
 import requests from '@/utils/request'
 import { Movie } from '@/typings'
 import Row from '../components/Row'
+import { useRecoilValue } from 'recoil'
+import { modalState } from '@/atoms/modalAtoms'
+import Modal from '../components/Modal'
 
 interface Props {
 	netflixOriginal: Movie[]
@@ -26,7 +30,11 @@ const Home = ({ topRated,
 	romanceMovies,
 	trendingNow, 
 }: Props) => {
-	console.log(topRated)
+		const showModal = useRecoilValue(modalState)
+		
+		
+
+
 	return (
 		<div className=''>
 			<Head>
@@ -48,10 +56,9 @@ const Home = ({ topRated,
           <Row title="Romance Movies" movies={romanceMovies} />
           <Row title="Documentaries" movies={documentaries} />
         </section>
-
-
-
 			</main>
+  
+    {showModal && <Modal />}
 
 		</div>
 	)

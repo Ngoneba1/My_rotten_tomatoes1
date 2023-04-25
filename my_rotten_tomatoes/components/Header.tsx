@@ -1,5 +1,6 @@
 import useAuth from '@/hooks/useAuth'
 import {SearchIcon, UserIcon} from '@heroicons/react/solid'
+import router from 'next/router'
 
 function Header() {
     const {logout} = useAuth()
@@ -15,7 +16,7 @@ function Header() {
                 
             <ul className="flex space-x-12">
                 <li className="headerLink">Home</li>
-                <li className="headerLink">TV Shows</li>
+                <li className="headerLink" onClick={() => router.push('/Tvshow')}>TV Shows</li>
                 <li className="headerLink">Movies</li>
                 <li className="headerLink">New & Popular</li>
                 <li className="headerLink">My List</li>

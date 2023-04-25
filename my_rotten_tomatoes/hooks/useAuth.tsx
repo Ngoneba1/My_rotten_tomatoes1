@@ -8,7 +8,7 @@ import {
   import { useRouter } from 'next/router';
   import { createContext, useContext, useEffect, useMemo, useState } from 'react';
   import { auth } from '../firebase';
-  import Landing from '@/components/Landing';
+  import Landing from '@/pages/Landing';
   
   interface IAuth {
     user: User | null;

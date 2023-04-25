@@ -6,7 +6,7 @@ import requests from '@/utils/request'
 import { Movie } from '@/typings'
 import Row from '../components/Row'
 import useAuth from '@/hooks/useAuth'
-import Header1 from './Header1'
+import Header1 from '../components/Header1'
 
 
 interface Props {

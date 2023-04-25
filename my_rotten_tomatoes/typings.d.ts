@@ -21,6 +21,32 @@ export interface Genre {
     vote_average: number
     vote_count: number
   }
+
+  export interface TVShow {
+    id: number;
+    name: string;
+    overview: string;
+    backdrop_path: string;
+    poster_path: string;
+    vote_average: number;
+    first_air_date: string;
+    genres: { id: number; name: string }[];
+    created_by: { id: number; name: string; profile_path: string }[];
+    episode_run_time: number[];
+    number_of_seasons: number;
+    season: {
+      id: number;
+      name: string;
+      overview: string;
+      poster_path: string;
+      season_number: number;
+    }[];
+    status: string;
+    type: string;
+    vote_count: number;
+  }
+  
+
   
   export interface Element {
     type:

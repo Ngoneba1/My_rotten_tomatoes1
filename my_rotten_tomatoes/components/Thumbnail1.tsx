@@ -1,25 +1,25 @@
 import { useRecoilState } from 'recoil'
-import {Movie} from '../typings'
+import {TVShow} from '../typings'
 import Image from 'next/image'
 import { modalState, movieState } from '@/atoms/modalAtoms'
 
 interface Props{
-    movie: Movie 
+    tvshows: TVShow 
 }
 
-function Thumbnail({ movie }: Props) {
+function Thumbnail1({ tvshows }: Props) {
     const [showModal, setShowModal] = useRecoilState(modalState)
-    const [currentMovie, setCurrentMovie] = useRecoilState(movieState)
+    const [currentTvShows, setTvShow] = useRecoilState(movieState)
 
     return (
         <div className='relative h-28 min-w-[180px] cursor-pointer transition duration-200 ease-out md:h-36 md:min-w-[260px] md: hover:scale-105'
         onClick={() => {
-            setCurrentMovie(movie)
+            setTvShow(tvshows)
             setShowModal(true)
           }}
         >
         <Image
-                src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path || movie.poster_path}`}
+                src={`https://image.tmdb.org/t/p/w500${tvshows.backdrop_path || tvshows.poster_path}`}
                 className="rounded-sm object-cover md:rounded"
                 layout="fill" alt={''}      />
     </div>
@@ -27,4 +27,4 @@ function Thumbnail({ movie }: Props) {
     )
 }
 
-export default Thumbnail
+export default Thumbnail1

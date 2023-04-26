@@ -24,6 +24,7 @@ function Banner1({topRated}:Props) {
           topRated?.[Math.floor(Math.random() * topRated?.length ?? 0)]
 
         )
+        console.log(topRated);
       }, [topRated])
 
 
@@ -39,7 +40,7 @@ function Banner1({topRated}:Props) {
     />
   </div>    
   <h1 className="text-6xl font-bold text-white lg:justify-end mt-4 md:mt-6 lg:mt-8">
-  {tvShows?.name || tvShows?.name || tvShows?.overview}
+  {tvShows?.name }
 </h1>
 
 

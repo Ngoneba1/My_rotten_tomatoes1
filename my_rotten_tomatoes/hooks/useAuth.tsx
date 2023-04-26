@@ -8,7 +8,7 @@ import {
   import { useRouter } from 'next/router';
   import { createContext, useContext, useEffect, useMemo, useState } from 'react';
   import { auth } from '../firebase';
-  // import Landing from '@/pages/Landing';
+  import Landing from '@/pages/Landing';
   
   interface IAuth {
     user: User | null;
@@ -109,9 +109,9 @@ import {
       return null;
     }
   
-    // if (!user && router.pathname !== '/login') {
-    //   return <Landing netflixOriginal={[]} trendingNow={[]} topRated={[]} actionMovies={[]} comedyMovies={[]} horrorMovies={[]} romanceMovies={[]} documentaries={[]}/> ;
-    // }
+    if (!user && router.pathname !== '/login') {
+      return <Landing netflixOriginal={[]} trendingNow={[]} topRated={[]} actionMovies={[]} comedyMovies={[]} horrorMovies={[]} romanceMovies={[]} documentaries={[]}/> ;
+    }
   
     return (
       <AuthContext.Provider value={memoedValue}>

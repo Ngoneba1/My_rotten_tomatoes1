@@ -1,6 +1,5 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import CustomModal from '@/components/Modal';
 import Header from '../components/Header'
 import Banner from'../components/Banner'
 import requests from '@/utils/request'
@@ -20,11 +19,11 @@ interface Props {
 	comedyMovies: Movie[]
 	horrorMovies: Movie[]
 	romanceMovies: Movie[]
-documentaries: Movie[]	
+    documentaries: Movie[]	
 }
 
 const Home = ({ topRated,
-	netflixOriginal,
+	
 	actionMovies,
 	comedyMovies,
 	documentaries,
@@ -37,8 +36,6 @@ const Home = ({ topRated,
 		const showModal = useRecoilValue(modalState)
 		const movie = useRecoilValue(movieState)
 		const list = useList(user?.uid)
-		
-
 
 	return (
 		<div className=''>

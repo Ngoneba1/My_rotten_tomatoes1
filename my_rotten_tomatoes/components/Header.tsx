@@ -17,8 +17,6 @@ function Header() {
             <ul className="flex space-x-12">
                 <li className="headerLink">Home</li>
                 <li className="headerLink" onClick={() => router.push('/Tvshow')}>TV Shows</li>
-                <li className="headerLink">Movies</li>
-                <li className="headerLink">New & Popular</li>
                 <li className="headerLink">My List</li>
             </ul>
 

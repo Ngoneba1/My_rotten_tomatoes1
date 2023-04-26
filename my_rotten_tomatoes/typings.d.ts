@@ -30,6 +30,8 @@ export interface Genre {
 
   export interface TVShow {
     id: number;
+    media_type?: string;
+    release_date?: string;
     name: string;
     overview: string;
     backdrop_path: string;
@@ -40,7 +42,7 @@ export interface Genre {
     created_by: { id: number; name: string; profile_path: string }[];
     episode_run_time: number[];
     number_of_seasons: number;
-    season: {
+    seasons: {
       id: number;
       name: string;
       overview: string;
@@ -51,6 +53,7 @@ export interface Genre {
     type: string;
     vote_count: number;
   }
+  
   
 
   

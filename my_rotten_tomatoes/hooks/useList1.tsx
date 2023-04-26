@@ -1,10 +1,10 @@
 import { db } from "@/firebase"
-import { Movie } from "@/typings"
+import { TVShow } from "@/typings"
 import { DocumentData, collection, onSnapshot } from "firebase/firestore"
 import { useEffect, useState } from "react"
 
 function useList (uid: string | undefined) {
-    const [list, setList] = useState<Movie[] | DocumentData[]>([])
+    const [list, setList] = useState<TVShow[] | DocumentData[]>([])
 
         useEffect(()=> {
 

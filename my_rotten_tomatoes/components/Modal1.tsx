@@ -1,4 +1,4 @@
-import { modalState, tvshowstate } from "@/atoms/modalAtoms1"
+import { modalState1, tvshowstate } from "@/atoms/modalAtoms1"
 import ReactPlayer from "react-player/lazy"
 import { Genre, TVShow } from "@/typings"
 import { CheckIcon, PlusIcon, ThumbUpIcon, VolumeOffIcon, VolumeUpIcon, XIcon } from "@heroicons/react/solid"
@@ -15,7 +15,7 @@ import toast, { Toaster } from "react-hot-toast"
 
 
 function Modal1() {
-    const [showModal, setShowModal] = useRecoilState(modalState)
+    const [showModal1, setShowModal1] = useRecoilState(modalState1)
     const [tvshow, setTvShow] = useRecoilState(tvshowstate)
     const [trailer, setTrailer] = useState('') 
     const [genres, setGenres] = useState<Genre[]>([])
@@ -114,12 +114,12 @@ function Modal1() {
     }
 
     const handleClose = () => {
-        setShowModal(false)
+        setShowModal1(false)
     }
 
     console.log(trailer)
 
-    return <MuiModal open= {showModal} onClose={handleClose} className="fixex !top-7 left-0 right-0 z-50 mx-auto w-full max-w-5xl overflow-hidden 
+    return <MuiModal open= {showModal1} onClose={handleClose} className="fixex !top-7 left-0 right-0 z-50 mx-auto w-full max-w-5xl overflow-hidden 
     overflow-y-scroll rounded-md scrollbar-hide">
         <>
 

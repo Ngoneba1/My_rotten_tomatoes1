@@ -2,8 +2,8 @@ import { DocumentData } from 'firebase/firestore'
 import { atom } from 'recoil'
 import { TVShow } from '../typings'
 
-export const modalState = atom({
-  key: 'modalState',
+export const modalState1 = atom({
+  key: 'modalState1',
   default: false,
 })
 

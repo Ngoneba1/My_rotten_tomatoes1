@@ -6,7 +6,7 @@ import requests from '@/utils/request'
 import { TVShow } from '@/typings'
 import Row1 from '../components/Row1'
 import { useRecoilValue } from 'recoil'
-import { modalState, tvshowstate } from '@/atoms/modalAtoms1'
+import { modalState1, tvshowstate } from '@/atoms/modalAtoms1'
 import Modal1 from '../components/Modal1'
 import useList1 from '@/hooks/useList1';
 import useAuth from '@/hooks/useAuth';   
@@ -26,7 +26,7 @@ const Home = ({
  
 }: Props) => {
   const { loading, user } = useAuth()
-  const showModal = useRecoilValue(modalState)
+  const showModal = useRecoilValue(modalState1)
   const tvshow = useRecoilValue(tvshowstate)
   const list = useList1(user?.uid)
 

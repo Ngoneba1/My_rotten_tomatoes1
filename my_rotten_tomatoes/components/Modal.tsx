@@ -1,6 +1,6 @@
 import { modalState, movieState } from "@/atoms/modalAtoms"
 import ReactPlayer from "react-player/lazy"
-import { Genre, Movie, Review } from "@/typings"
+import { Genre, Movie } from "@/typings"
 import { CheckIcon, PlusIcon, ThumbUpIcon, VolumeOffIcon, VolumeUpIcon, XIcon } from "@heroicons/react/solid"
 import MuiModal from "@mui/material/Modal"
 import { JSXElementConstructor, Key, ReactElement, ReactFragment, ReactPortal, useEffect, useState } from "react"
@@ -11,7 +11,7 @@ import { DocumentData, collection, deleteDoc, doc, onSnapshot, setDoc } from "fi
 import useAuth from "@/hooks/useAuth"
 import { db } from "@/firebase"
 import toast, { Toaster } from "react-hot-toast"
-
+import axios from "axios"
 
 
 function Modal() {
@@ -64,6 +64,8 @@ function Modal() {
           fetchMovie()
     },[movie])
 
+    
+    
      // Find all the movies in the user's list
   useEffect(() => {
     if (user) {
@@ -108,11 +110,9 @@ function Modal() {
             }
 
             )
-
       }
-    
     }
-
+    
     const handleClose = () => {
         setShowModal(false)
     }
@@ -189,31 +189,27 @@ function Modal() {
                   </div>
                  </div>
 
-                 <div className="flex flex-col gap-x-10 gap-y-4 font-light md:flex-row ">
+           <div className="flex flex-col gap-x-10 gap-y-4 font-light md:flex-row">
+              <p className="text-[white] w-5/6">{movie?.overview}</p>
 
-                    <p className="text-[white] w-5/6">{movie?.overview}</p>
+              <div className="flex flex-col space-y-3 text-sm text-[white]">
+                <div>
+                  <span className="text-[gray]">Genres: </span>
+                  {genres.map((genre) => genre.name).join(', ')}
+                </div>
 
-                    <div className="flex flex-col space-y-3 text-sm text-[white]">
-                      <div>
-                        <span className="text-[gray]">Genres: </span>
-                        {genres.map((genre) => genre.name).join(', ')}
-                      </div>
-                      {movie?.reviews && (
-                      <div>
-                        <span className="text-[gray]">Review: </span>
-                        {movie?.reviews[Math.floor(Math.random() * movie?.reviews.length)]}
-                      </div>
-                      )}
-                      
-                      <div>
-                      <span className="text-[gray]"> Total votes </span>
-                      {movie?.vote_count}
-                    </div>
+                <div>
+                  <span className="text-[gray]">Total votes: </span>
+                  {movie?.vote_count}
+                </div>
 
-                 </div>
-             </div>
-           </div>
-           </div>
+ 
+
+    
+  </div>
+</div>
+</div>
+</div>
         
         </>
     </MuiModal>

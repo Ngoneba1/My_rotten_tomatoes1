@@ -33,7 +33,7 @@ const Home: NextPage<Props> = ({
       </Head>
       <Header/>
 
-      <main className='relative pl-4 pb-24 lg:space-y-2'>
+      <main className='relative pl-4 pb-24 lg:space-y-24'>
         <Banner1 topRated={topRated}/>
         <section className="md:space-y-24">
           <Row1 name="Trending Now" tvshows={trendingNow} />

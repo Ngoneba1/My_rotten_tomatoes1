@@ -13,7 +13,6 @@ import { db } from "@/firebase"
 import toast, { Toaster } from "react-hot-toast"
 
 
-
 function Modal1() {
     const [showModal1, setShowModal1] = useRecoilState(modalState1)
     const [tvshow, setTvShow] = useRecoilState(tvshowstate)

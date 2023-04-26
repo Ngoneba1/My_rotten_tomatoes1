@@ -9,6 +9,7 @@ import {
   import { createContext, useContext, useEffect, useMemo, useState } from 'react';
   import { auth } from '../firebase';
   import Landing from '@/pages/Landing';
+  import axios from 'axios';
   
   interface IAuth {
     user: User | null;
@@ -38,6 +39,16 @@ import {
     const [error, setError] = useState(null);
     const [initialLoading, setInitialLoading] = useState(true);
     const router = useRouter();
+    const [movies, setMovies] = useState({
+      netflixOriginal: [],
+      trendingNow: [],
+      topRated: [],
+      actionMovies: [],
+      comedyMovies: [],
+      horrorMovies: [],
+      romanceMovies: [],
+      documentaries: []
+    });
   
     useEffect(() => {
       onAuthStateChanged(auth, (user) => {

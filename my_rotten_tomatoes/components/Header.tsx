@@ -30,11 +30,11 @@ interface SearchBarProps {
   };
 
   return (
-    <div className="fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-70 flex justify-center items-center">
+    <div className="fixed top-0 left-0 w-full h-full bg-[gray] bg-opacity-70 flex justify-center items-center">
       <div className="bg-white rounded-lg p-6 w-80">
-        <input type="text" value={searchText} onChange={handleInputChange} className="border border-gray-400 rounded-lg py-2 px-4 w-full mb-4" placeholder="Search movies and TV shows" />
-        <button onClick={handleSearch} className="bg-red-500 text-white py-2 px-4 rounded-lg">Search</button>
-        <button onClick={onClose} className="bg-gray-400 text-white py-2 px-4 rounded-lg ml-4">Close</button>
+        <input type="text" value={searchText} onChange={handleInputChange} className="border border-[gray] 0 rounded-lg py-2 px-4 w-full mb-4" placeholder="Search movies and TV shows" />
+        <button onClick={handleSearch} className="bg-red-500 text-[#000000] py-2 px-4 rounded-lg">Search</button>
+        <button onClick={onClose} className="bg-gray-400 text-[#000000] py-2 px-4 rounded-lg ml-4">Close</button>
         {searchResults.map((result) => (
           <div key={result.id} className="mt-4">
             <h2 className="text-lg font-semibold">{result.name || result.title}</h2>

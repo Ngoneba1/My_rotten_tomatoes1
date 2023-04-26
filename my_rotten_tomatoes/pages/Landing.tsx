@@ -5,6 +5,7 @@ import requests from '@/utils/request'
 import { Movie } from '@/typings'
 import Row from '../components/Row'
 import Header1 from '../components/Header1'
+import axios from 'axios'
 
 
 interface Props {
@@ -18,7 +19,7 @@ interface Props {
 	documentaries: Movie[]
 }
 
-const Home = ({ topRated,
+const Landing = ({ topRated,
 	netflixOriginal,
 	actionMovies,
 	comedyMovies,
@@ -52,7 +53,7 @@ const Home = ({ topRated,
 	)
 }
 
-export default Home
+export default Landing
 
 export const getServerSideProps = async () => {
 	const [
@@ -74,20 +75,19 @@ export const getServerSideProps = async () => {
 		fetch(requests.fetchRomanceMovies).then((res) => res.json()),
 		fetch(requests.fetchDocumentaries).then((res) => res.json()),
 	  ])
+	  console.log(trendingNow)
 
-return {
-	props: {
-		netflixOriginals: netflixOriginals.results,
-		trendingNow: trendingNow.results,
-		topRated: topRated.results,
-		actionMovies: actionMovies.results,
-		comedyMovies: comedyMovies.results,
-		horrorMovies: horrorMovies.results,
-		romanceMovies: romanceMovies.results,
-		documentaries: documentaries.results,
-
-	},
-}
-
-
-}
+	  return {
+		props: {
+		  netflixOriginal: netflixOriginals.results,
+		  trendingNow: trendingNow.results,
+		  topRated: topRated.results,
+		  actionMovies: actionMovies.results,
+		  comedyMovies: comedyMovies.results,
+		  horrorMovies: horrorMovies.results,
+		  romanceMovies: romanceMovies.results,
+		  documentaries: documentaries.results,
+		},
+	  }
+	}
+	  

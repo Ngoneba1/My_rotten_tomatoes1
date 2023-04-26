@@ -12,17 +12,14 @@ import axios from 'axios';
 interface Props {
   trendingNow: TVShow[]
   topRated: TVShow[]
-  actionTVShows: TVShow[]
   comedyTVShows: TVShow[]
-  horrorTVShows: TVShow[]
   romanceTVShows: TVShow[]
 }
 
 const Home: NextPage<Props> = ({
   topRated,
-  actionTVShows,
+ 
   comedyTVShows,
-  horrorTVShows,
   romanceTVShows,
   trendingNow,
 }: Props) => {
@@ -36,13 +33,13 @@ const Home: NextPage<Props> = ({
       </Head>
       <Header/>
 
-      <main className='relative pl-4 pb-24 lg:space-y-24'>
+      <main className='relative pl-4 pb-24 lg:space-y-2'>
         <Banner1 topRated={topRated}/>
         <section className="md:space-y-24">
           <Row1 name="Trending Now" tvshows={trendingNow} />
-          <Row1 name="Action TV Shows" tvshows={actionTVShows} />
+          
           <Row1 name="Comedy TV Shows" tvshows={comedyTVShows} />
-          <Row1 name="Scary TV Shows" tvshows={horrorTVShows} />
+         
           <Row1 name="Romance TV Shows" tvshows={romanceTVShows} />
         </section>
       </main>

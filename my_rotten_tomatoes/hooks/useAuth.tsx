@@ -8,8 +8,7 @@ import {
   import { useRouter } from 'next/router';
   import { createContext, useContext, useEffect, useMemo, useState } from 'react';
   import { auth } from '../firebase';
-  import Landing from '@/pages/Landing';
-  import axios from 'axios';
+  // import Landing from '@/pages/Landing';
   
   interface IAuth {
     user: User | null;
@@ -39,16 +38,6 @@ import {
     const [error, setError] = useState(null);
     const [initialLoading, setInitialLoading] = useState(true);
     const router = useRouter();
-    const [movies, setMovies] = useState({
-      netflixOriginal: [],
-      trendingNow: [],
-      topRated: [],
-      actionMovies: [],
-      comedyMovies: [],
-      horrorMovies: [],
-      romanceMovies: [],
-      documentaries: []
-    });
   
     useEffect(() => {
       onAuthStateChanged(auth, (user) => {
@@ -120,9 +109,9 @@ import {
       return null;
     }
   
-    if (!user && router.pathname !== '/login') {
-      return <Landing netflixOriginal={[]} trendingNow={[]} topRated={[]} actionMovies={[]} comedyMovies={[]} horrorMovies={[]} romanceMovies={[]} documentaries={[]}/> ;
-    }
+    // if (!user && router.pathname !== '/login') {
+    //   return <Landing netflixOriginal={[]} trendingNow={[]} topRated={[]} actionMovies={[]} comedyMovies={[]} horrorMovies={[]} romanceMovies={[]} documentaries={[]}/> ;
+    // }
   
     return (
       <AuthContext.Provider value={memoedValue}>

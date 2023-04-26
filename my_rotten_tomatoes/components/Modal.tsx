@@ -23,6 +23,7 @@ function Modal() {
     const{user}= useAuth()
     const [addedToList, setAddedToList] = useState(false)
     const [movies, setMovies] = useState<DocumentData[] | Movie[]>([])
+    
 
     const toastStyle = {
       background: 'white',
@@ -187,6 +188,8 @@ function Modal() {
                   HD
                   </div>
                  </div>
+
+                 
 
                  <div className="flex flex-col gap-x-10 gap-y-4 font-light md:flex-row ">
                     <p className="text-[white] w-5/6">{movie?.overview}</p>

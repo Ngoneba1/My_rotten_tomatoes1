@@ -20,7 +20,7 @@ interface Props {
 	comedyMovies: Movie[]
 	horrorMovies: Movie[]
 	romanceMovies: Movie[]
-	documentaries: Movie[]
+documentaries: Movie[]	
 }
 
 const Home = ({ topRated,
@@ -52,17 +52,17 @@ const Home = ({ topRated,
 				
 			<Banner topRated={topRated}/>
 			<section className="md:space-y-24">
-          <Row title="Trending Now" movies={trendingNow} />
-          <Row title="Top Rated" movies={topRated} />
-          <Row title="Action Thrillers" movies={actionMovies} />
+				<Row title="Trending Now" movies={trendingNow} />
+				<Row title="Top Rated" movies={topRated} />
+				<Row title="Action Thrillers" movies={actionMovies} />
 
-		  {list.length > 0 && <Row title="My List" movies={list} />}
-		
-          <Row title="Comedies" movies={comedyMovies} />
-          <Row title="Scary Movies" movies={horrorMovies} />
-          <Row title="Romance Movies" movies={romanceMovies} />
-          <Row title="Documentaries" movies={documentaries} />
-        </section>
+				{list.length > 0 && <Row title="My List" movies={list} />}
+				
+				<Row title="Comedies" movies={comedyMovies} />
+				<Row title="Scary Movies" movies={horrorMovies} />
+				<Row title="Romance Movies" movies={romanceMovies} />
+				<Row title="Documentaries" movies={documentaries} />
+			</section>
 			</main>
 
   
@@ -95,19 +95,16 @@ export const getServerSideProps = async () => {
 		fetch(requests.fetchDocumentaries).then((res) => res.json()),
 	  ])
 
-return {
-	props: {
-		netflixOriginals: netflixOriginals.results,
-		trendingNow: trendingNow.results,
-		topRated: topRated.results,
-		actionMovies: actionMovies.results,
-		comedyMovies: comedyMovies.results,
-		horrorMovies: horrorMovies.results,
-		romanceMovies: romanceMovies.results,
-		documentaries: documentaries.results,
-
-	},
-}
-
-
+	  return {
+		props: {
+			netflixOriginals: netflixOriginals.results,
+			trendingNow: trendingNow.results,
+			topRated: topRated.results,
+			actionMovies: actionMovies.results,
+			comedyMovies: comedyMovies.results,
+			horrorMovies: horrorMovies.results,
+			romanceMovies: romanceMovies.results,
+			documentaries: documentaries.results,
+		},
+	}
 }
